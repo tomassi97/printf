@@ -20,10 +20,11 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			/*choose_format function*/
-			count += choose_format(args, *++format);		
+			count += choose_format(args, *++format);
 		}
-		_putchar(*format++);
-		count++;
+		else
+			count += _putchar(*format);
+		format++;
 	}
 	va_end(args);
 	return (count);

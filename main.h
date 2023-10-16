@@ -5,4 +5,5 @@
 int _putchar(char c);
 int _printf(const char *format, ...);
 int choose_format(va_list args, char type);
+int print_string(char *input_str);
 #endif
