@@ -35,18 +35,17 @@ int print_numbers(long num)
 	if (num < 0)
 	{
 		count += _putchar('-');
-		count += print_numbers(-1 * num);
+		return (count + print_numbers(-1 * num));
 	}
 	else if (num < 10)
 	{
-		count += _putchar(num_chars[num]);
+		return (count + _putchar(num_chars[num]));
 
 	}
 	else
 	{
 		count += _putchar(num_chars[num / 10]);
-		count += _putchar(num_chars[num % 10]);
+		return (count + _putchar(num_chars[num % 10]));
 	}
-	return (count);
 }
 

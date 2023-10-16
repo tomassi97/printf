@@ -24,7 +24,7 @@ int choose_format(va_list args, char type)
 	{
 		count += _putchar('%');
 	}
-	else if (type == ('d' || 'i'))
+	else if ((type == 'd') || (type == 'i'))
 	{
 		count += print_numbers((long)(va_arg(args, int)));
 	}
