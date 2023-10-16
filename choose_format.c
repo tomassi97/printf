@@ -16,9 +16,13 @@ int choose_format(va_list args, char type)
 		_putchar(va_arg(args, int));
 		count = count + 1;
 	}
-	if (type == 's')
+	else if (type == 's')
 	{
 		count += print_string(va_arg(args, char *));
+	}
+	else if (type == '%')
+	{
+		count += _putchar('%');
 	}
 	return (count);
 }
