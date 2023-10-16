@@ -19,3 +19,34 @@ int print_string(char *input_str)
 	}
 	return (char_count);
 }
+
+/**
+ * print_numbers - prints numbers passed in as arguments
+ * @num: passed numbers to be printed
+ * Return: counts of numbers printed
+ */
+
+int print_numbers(long num)
+{
+	int count = 0;
+	char *num_chars;
+
+	num_chars = "0123456789";
+	if (num < 0)
+	{
+		count += _putchar('-');
+		count += print_numbers(-1 * num);
+	}
+	else if (num < 10)
+	{
+		count += _putchar(num_chars[num]);
+
+	}
+	else
+	{
+		count += _putchar(num_chars[num / 10]);
+		count += _putchar(num_chars[num % 10]);
+	}
+	return (count);
+}
+

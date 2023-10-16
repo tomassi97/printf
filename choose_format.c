@@ -24,5 +24,11 @@ int choose_format(va_list args, char type)
 	{
 		count += _putchar('%');
 	}
+	else if (type == ('d' || 'i'))
+	{
+		count += print_numbers((long)(va_arg(args, int)));
+	}
+	else
+		count += _putchar('%');
 	return (count);
 }
