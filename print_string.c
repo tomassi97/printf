@@ -13,9 +13,9 @@ int print_string(char *input_str)
 
 	while (*input_str != '\0')
 	{
-		 _putchar(*input_str);
-		 char_count = char_count + 1;
-		 input_str++;
+		_putchar(*input_str);
+		char_count = char_count + 1;
+		input_str++;
 	}
 	return (char_count);
 }
