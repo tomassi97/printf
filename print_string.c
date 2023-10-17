@@ -35,7 +35,7 @@ int print_numbers(long num)
 	if (num < 0)
 	{
 		count += _putchar('-');
-		return (count + print_numbers(-1 * num));
+		return (count + print_numbers(-num));
 	}
 	else if (num < 10)
 	{
@@ -44,8 +44,8 @@ int print_numbers(long num)
 	}
 	else
 	{
-		count += _putchar(num_chars[num / 10]);
-		return (count + _putchar(num_chars[num % 10]));
+		count += print_numbers(num / 10);
+		return (count + print_numbers(num % 10));
 	}
 }
 
