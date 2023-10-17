@@ -14,6 +14,8 @@ int _printf(const char *format, ...)
 	va_list args;
 	int count = 0;
 
+	if (format == NULL)
+		return;
 	va_start(args, format);
 	while (*format)
 	{
