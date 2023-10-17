@@ -28,10 +28,7 @@ int choose_format(va_list args, char type)
 	{
 		count += print_numbers((long)(va_arg(args, int)));
 	}
-	else if (type == '%')
-		count += _putchar('%');
 	else
-		return;
+		count += _putchar('%');
 	return (count);
-	
 }
