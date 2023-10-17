@@ -12,7 +12,7 @@ int print_string(char *input_str)
 	int char_count = 0;
 
 	if (input_str == NULL)
-		inpu_str = "(null)";
+		input_str = "(null)";
 	while (input_str[char_count])
 	{
 		_putchar(input_str[char_count++]);
