@@ -113,7 +113,7 @@ int print_unsigned_int(unsigned int ui)
  * Return: counts of numbers printed
  */
 
-int print_numbers_x(unsigned int num,int flag)
+int print_numbers_x(unsigned int num, int flag)
 {
 	int count = 0;
 	char *num_chars;
