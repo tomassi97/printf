@@ -134,31 +134,3 @@ int print_numbers_x(unsigned int num, int flag)
 		return (count + print_numbers_x((num % 16), flag));
 	}
 }
-/**
- * print_octal - A function that prints an unsigned int in octal notation
- * @ui: unsigned int to print in octal notation
- * Return: number of printed digits
- */
-int print_octal(unsigned int ui)
-{
-	unsigned int a[11];
-	unsigned int j = 1, m = 1073741824, sum = 0;
-	int counter;
-
-	a[0] = ui / m;
-	for (; j < 11; j++)
-	{
-		m /= 8;
-		a[j] = (ui / m) % 8;
-	}
-	for (j = 0; j < 11; j++)
-	{
-		sum += a[j];
-		if (sum || j == 10)
-		{
-			_putchar('0' + a[j]);
-			counter++;
-		}
-	}
-	return (counter);
-}
