@@ -78,3 +78,87 @@ int print_binary(unsigned int n)
 	}
 	return (counter);
 }
+/**
+ * print_unsigned_int - A function that prints an unsigned integer
+ * @ui: unsigned int to print
+ * Return: number of printed digits
+ */
+int print_unsigned_int(unsigned int ui)
+{
+	unsigned int a[10];
+	unsigned int j = 1, m = 1000000000, sum = 0;
+	int counter = 0;
+
+	a[0] = ui / m;
+	for (; j < 10; j++)
+	{
+		m /= 10;
+		a[j] = (ui / m) % 10;
+	}
+	for (j = 0; j < 10; j++)
+	{
+		sum += a[j];
+		if (sum || j == 9)
+		{
+			_putchar('0' + a[j]);
+			counter++;
+		}
+	}
+	return (counter);
+}
+/**
+ * print_numbers_x - prints numbers passed in as arguments
+ * @num: passed numbers to be printed
+ * @flag: check whether X in capital or small letters
+ * Return: counts of numbers printed
+ */
+
+int print_numbers_x(unsigned int num,int flag)
+{
+	int count = 0;
+	char *num_chars;
+	char *NUM_CHARS;
+
+	num_chars = "0123456789abcdef";
+	NUM_CHARS = "0123456789ABCDEF";
+	if (num < 16)
+	{
+		if (flag == 0) /* flag = 0 is for lowercase HEX*/
+			return (count + _putchar(num_chars[num]));
+		else
+			return (count + _putchar(NUM_CHARS[num]));
+	}
+	else
+	{
+		count += print_numbers_x((num / 16), flag);
+		return (count + print_numbers_x((num % 16), flag));
+	}
+}
+/**
+ * print_octal - A function that prints an unsigned int in octal notation
+ * @ui: unsigned int to print in octal notation
+ * Return: number of printed digits
+ */
+int print_octal(unsigned int ui)
+{
+	unsigned int a[11];
+	unsigned int j = 1, m = 1073741824, sum = 0;
+	int counter;
+
+	a[0] = ui / m;
+	for (; j < 11; j++)
+	{
+		m /= 8;
+		a[j] = (ui / m) % 8;
+	}
+	for (j = 0; j < 11; j++)
+	{
+		sum += a[j];
+		if (sum || j == 10)
+		{
+			_putchar('0' + a[j]);
+			counter++;
+		}
+	}
+	return (counter);
+}

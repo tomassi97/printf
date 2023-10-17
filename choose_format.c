@@ -30,6 +30,14 @@ int choose_format(va_list args, char type)
 	}
 	else if (type == 'b')
 		count += print_binary(va_arg(args, unsigned int));
+	else if (type == 'u')
+		count += print_unsigned_int(va_arg(args, unsigned int));
+	else if (type == 'x')
+		count += print_numbers_x(va_arg(args, unsigned int), 0);
+	else if (type == 'X')
+		count += print_numbers_x(va_arg(args, unsigned int), 1);
+	else if (type == 'o')
+		count += print_octal(va_arg(args, unsigned int));
 	else if (type == '%')
 		count += _putchar('%');
 	else
