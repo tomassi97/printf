@@ -13,11 +13,9 @@ int print_string(char *input_str)
 
 	if (input_str == NULL)
 		inpu_str = "(null)";
-	while (*input_str != '\0')
+	while (input_str[char_count])
 	{
-		_putchar((int)*input_str);
-		char_count = char_count + 1;
-		input_str++;
+		_putchar(input_str[char_count++]);
 	}
 	return (char_count);
 }
