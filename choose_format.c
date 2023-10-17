@@ -36,8 +36,8 @@ int choose_format(va_list args, char type)
 		count += print_numbers_x(va_arg(args, unsigned int), 0);
 	else if (type == 'X')
 		count += print_numbers_x(va_arg(args, unsigned int), 1);
-	else if (type == 'o')
-		count += print_octal(va_arg(args, unsigned int));
+	/*else if (type == 'o')
+		count += print_octal(va_arg(args, unsigned int));*/
 	else if (type == '%')
 		count += _putchar('%');
 	else
