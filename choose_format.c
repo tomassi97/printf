@@ -28,6 +28,8 @@ int choose_format(va_list args, char type)
 	{
 		count += print_numbers((long)(va_arg(args, int)));
 	}
+	else if (type == 'b')
+		count += print_binary(va_arg(args, unsigned int));
 	else if (type == '%')
 		count += _putchar('%');
 	else
