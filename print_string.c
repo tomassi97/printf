@@ -11,6 +11,8 @@ int print_string(char *input_str)
 {
 	int char_count = 0;
 
+	if (input_str == NULL)
+		inpu_str = "(null)";
 	while (*input_str != '\0')
 	{
 		_putchar((int)*input_str);
