@@ -39,9 +39,9 @@ int choose_format(va_list args, char type)
 	else if (type == 'o')
 		count += print_octal(va_arg(args, unsigned int));
 	else if (type == 'p')
-		count += print_pointer(va_arg(args, unsigned long point));
+		count += print_pointer(va_arg(args, unsigned long));
 	else if (type == 'r')
-		count += print_reverse(va_arg(args, char *str));
+		count += print_reverse(va_arg(args, char *));
 	else if (type == '%')
 		count += _putchar('%');
 	else
