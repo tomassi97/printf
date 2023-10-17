@@ -31,6 +31,6 @@ int choose_format(va_list args, char type)
 	else if (type == '%')
 		count += _putchar('%');
 	else
-		return;
+		return (-1);
 	return (count);
 }
